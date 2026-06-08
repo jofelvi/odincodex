@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { SECTION_IDS, SITE_CONFIG } from "@/lib/constants";
 import { useDevicePerformance } from "@/hooks/useDevicePerformance";
 import Button from "@/components/ui/Button";
@@ -43,6 +44,21 @@ export default function Hero() {
 
       {/* Content */}
       <div className="section-container relative z-10 text-center">
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <div className="relative">
+            <Image
+              src="/images/logo.png"
+              alt="OdinCodex"
+              width={200}
+              height={200}
+              className="h-32 w-32 object-contain drop-shadow-[0_0_30px_rgba(0,191,165,0.3)] md:h-48 md:w-48"
+              priority
+            />
+            <div className="absolute inset-0 animate-pulse rounded-full bg-accent-cyan/5 blur-3xl" />
+          </div>
+        </div>
+
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 px-4 py-2">
           <span className="h-2 w-2 rounded-full bg-accent-cyan animate-pulse" />
           <span className="font-mono text-xs tracking-wider text-accent-cyan uppercase">

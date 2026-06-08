@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { SITE_CONFIG, SECTION_IDS } from "@/lib/constants";
 import { useI18n } from "@/i18n";
 
@@ -54,9 +55,18 @@ export default function Footer() {
             className="anim-fade-up"
             style={{ transitionDelay: "0ms" }}
           >
-            <h3 className="gradient-text mb-4 font-display text-3xl font-bold">
-              {SITE_CONFIG.name}
-            </h3>
+            <div className="mb-4 flex items-center gap-3">
+              <Image
+                src="/images/logo.png"
+                alt="OdinCodex"
+                width={48}
+                height={48}
+                className="h-12 w-12 object-contain"
+              />
+              <h3 className="gradient-text font-display text-3xl font-bold">
+                {SITE_CONFIG.name}
+              </h3>
+            </div>
             <p className="text-sm leading-relaxed text-text-secondary">
               {t("footer.description")}
             </p>

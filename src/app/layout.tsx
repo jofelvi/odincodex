@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     "OdinCodex",
   ],
   authors: [{ name: "OdinCodex" }],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "OdinCodex — Software Studio",
     description:
