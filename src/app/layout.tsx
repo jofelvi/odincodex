@@ -10,7 +10,7 @@ const familjen = Familjen_Grotesk({
   display: "swap",
 });
 
-const defaultTitle = "OdinCodex — Sistemas de gestión y software a medida";
+const defaultTitle = "OdinCodex — Sistemas POS, facturación y gestión en Venezuela";
 
 // <=160 chars so search engines show it whole.
 const description =

@@ -210,11 +210,16 @@ h2[tabindex="-1"]:focus {
 
     /* The hero section clips its canvas (overflow: hidden makes it a scroll
        container), so a view() timeline would bind to it and never move: drive
-       this from the page scroll across the first viewport instead. */
-    .hero-depth {
-      animation: hero-recede linear both;
-      animation-timeline: scroll(root block);
-      animation-range: 0 85vh;
+       this from the page scroll across the first viewport instead.
+       Only where the whole hero fits one viewport (side-by-side layout): on
+       phones and short screens the suite list sits below the fold and would be
+       dimmed while it is being read. */
+    @media (min-width: 1024px) and (min-height: 760px) {
+      .hero-depth {
+        animation: hero-recede linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0 85vh;
+      }
     }
 
     .scroll-rise {

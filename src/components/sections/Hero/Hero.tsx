@@ -133,9 +133,9 @@ export default function Hero() {
                       className="mt-0.5 h-7 w-7 text-bronze transition-colors duration-150 ease-[ease] group-hover:text-bronze-bright"
                     />
                     <span className="min-w-0">
-                      <span className="flex items-baseline justify-between gap-3">
-                        <span className="font-semibold text-parchment">{sys.name}</span>
-                        <span className="text-right text-xs text-mist">{copy.sector}</span>
+                      <span className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+                        <span className="font-semibold whitespace-nowrap text-parchment">{sys.name}</span>
+                        <span className="text-xs text-mist sm:text-right">{copy.sector}</span>
                       </span>
                       <span className="mt-1 block text-sm leading-snug text-mist-dim">
                         {copy.highlights
