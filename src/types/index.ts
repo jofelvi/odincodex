@@ -1,28 +1,49 @@
-export interface Project {
-  id: string;
+import type { Locale } from "@/i18n";
+
+/** Ids of the OdinCodex systems; each has a drawn Norse icon in ui/NorseIcon. */
+export type SystemId =
+  | "valhalla"
+  | "bifrost"
+  | "heimdall"
+  | "thor"
+  | "asgard"
+  | "forseti"
+  | "sleipnir"
+  | "midgard";
+
+export interface SystemModule {
+  /** Module name, e.g. "Caja bimoneda y arqueo". */
   title: string;
-  description: string;
-  tags: string[];
-  thumbnail: string;
-  video?: string;
-  link?: string;
+  /** 2–5 concrete capabilities, plain business language. */
+  points: string[];
 }
 
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  features: string[];
+export interface SystemCopy {
+  /** Sector it serves, short: "Restaurantes, bares y clubes". */
+  sector: string;
+  /** One sentence: what it is and what changes for the business. */
+  summary: string;
+  /** Three short, verifiable headline capabilities for compact views (hero index). */
+  highlights: string[];
+  /** Full module map. */
+  modules: SystemModule[];
+  /** Where it runs: "Panel web", "App Android e iOS", "Impresoras térmicas"… */
+  platforms: string[];
+  /** Integrations: "Tasa oficial BCV", "Pago móvil verificado contra el banco"… */
+  integrations: string[];
+  /** Optional fact line shown with the system, e.g. "En producción en Arena Restobar." */
+  proof?: string;
 }
 
-export interface TechItem {
+export interface SystemEntry {
+  id: SystemId;
   name: string;
-  icon: string;
-  category: "frontend" | "backend" | "design" | "devops" | "database";
+  /** live: in production or client validation · workshop: in development. */
+  stage: "live" | "workshop";
+  copy: Record<Locale, SystemCopy>;
 }
 
-export interface NavLink {
-  label: string;
-  href: string;
+export interface StackGroup {
+  category: Record<Locale, string>;
+  items: string[];
 }

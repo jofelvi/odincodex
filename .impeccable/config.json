@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#00bfa5",
+        "createdAt": "2026-11-09T05:41:58.484Z",
+        "reason": "owner instruction 2026-11-08: the 3D rune particle field (ParticleField.tsx) must not be touched; its glyph colours predate DESIGN.md"
+      }
+    ]
+  }
+}

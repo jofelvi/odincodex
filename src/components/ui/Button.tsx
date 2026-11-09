@@ -1,14 +1,40 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { MouseEvent, ReactNode } from "react";
+
+type Variant = "primary" | "secondary" | "quiet";
+type Size = "default" | "large";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "primary" | "outline";
-  size?: "default" | "large";
+  /** primary: forged bronze · secondary: outlined · quiet: text-weight action */
+  variant?: Variant;
+  size?: Size;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
+  /**
+   * Unavailable but still focusable: renders aria-disabled and swallows clicks (including the
+   * implicit form submit) without the native disabled attribute, so focus is never dropped to
+   * the body while an action is in flight.
+   */
+  ariaDisabled?: boolean;
+  /** Marks an in-flight action for assistive tech. */
+  busy?: boolean;
+  className?: string;
 }
+
+const VARIANTS: Record<Variant, string> = {
+  primary: "bg-bronze text-night-deep hover:bg-bronze-bright aria-disabled:hover:bg-bronze",
+  secondary:
+    "border border-line-strong text-parchment hover:border-mist hover:bg-surface aria-disabled:hover:border-line-strong aria-disabled:hover:bg-transparent",
+  quiet: "text-parchment hover:text-bronze-bright aria-disabled:hover:text-parchment",
+};
+
+const SIZES: Record<Size, string> = {
+  default: "min-h-11 px-5 text-[0.9375rem]",
+  large: "min-h-12 px-6 text-base",
+};
 
 export default function Button({
   children,
@@ -16,30 +42,29 @@ export default function Button({
   size = "default",
   onClick,
   type = "button",
+  disabled = false,
+  ariaDisabled = false,
+  busy = false,
+  className = "",
 }: ButtonProps) {
-  const baseClasses =
-    "relative overflow-hidden rounded-full font-body font-medium transition-all duration-300 group";
-
-  const variantClasses = {
-    primary:
-      "bg-gradient-to-r from-accent-bronze to-accent-cyan text-bg-primary hover:shadow-[var(--glow-cyan)]",
-    outline:
-      "border border-accent-cyan/30 text-accent-cyan hover:border-accent-cyan/60 hover:bg-accent-cyan/10",
-  };
-
-  const sizeClasses = {
-    default: "px-6 py-3 text-sm",
-    large: "px-8 py-4 text-base",
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    if (ariaDisabled) {
+      e.preventDefault();
+      return;
+    }
+    onClick?.();
   };
 
   return (
     <button
       type={type}
-      onClick={onClick}
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`}
-      data-cursor="hover"
+      onClick={handleClick}
+      disabled={disabled}
+      aria-disabled={ariaDisabled || undefined}
+      aria-busy={busy || undefined}
+      className={`press inline-flex items-center justify-center gap-2 rounded-lg font-semibold disabled:cursor-not-allowed disabled:opacity-60 aria-disabled:cursor-progress aria-disabled:opacity-60 ${VARIANTS[variant]} ${SIZES[size]} ${className}`}
     >
-      <span className="relative z-10">{children}</span>
+      {children}
     </button>
   );
 }

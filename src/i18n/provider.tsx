@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useState, useCallback, useEffect } from "react";
+import { ReactNode, useState, useCallback, useEffect, useRef } from "react";
 import { I18nContext, getTranslation } from "./index";
 import type { Locale } from "./index";
 
@@ -19,6 +19,20 @@ export default function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     setLocaleState(readStoredLocale());
   }, []);
+
+  // Keep <html lang> in sync so screen readers and the browser's own
+  // validation/translation use the language actually on screen.
+  // Only the home page's generic title is swapped: every other route (e.g.
+  // /sistemas/valhalla) keeps the title its metadata rendered on the server,
+  // which is also what search engines see after rendering the page.
+  const serverTitle = useRef<string | null>(null);
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    serverTitle.current ??= document.title;
+    if (serverTitle.current === getTranslation("es", "site.title")) {
+      document.title = getTranslation(locale, "site.title");
+    }
+  }, [locale]);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);

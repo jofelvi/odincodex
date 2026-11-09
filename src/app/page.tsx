@@ -1,27 +1,35 @@
 import Hero from "@/components/sections/Hero/Hero";
+import Systems from "@/components/sections/Systems/Systems";
+import WhiteLabel from "@/components/sections/WhiteLabel/WhiteLabel";
+import Studio from "@/components/sections/Studio/Studio";
+import Stack from "@/components/sections/Stack/Stack";
 import Services from "@/components/sections/Services/Services";
-import Work from "@/components/sections/Work/Work";
-import About from "@/components/sections/About/About";
-import AIAutomations from "@/components/sections/AIAutomations/AIAutomations";
-import TechStack from "@/components/sections/TechStack/TechStack";
 import Contact from "@/components/sections/Contact/Contact";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ClientProviders from "@/components/layout/ClientProviders";
-import ParallaxBlobs from "@/components/layout/ParallaxBlobs";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  organizationLd,
+  serviceLd,
+  systemsItemListLd,
+  websiteLd,
+} from "@/lib/seo";
 
 export default function Home() {
   return (
     <ClientProviders>
-      <ParallaxBlobs />
+      <JsonLd
+        data={[organizationLd(), websiteLd(), systemsItemListLd(), serviceLd()]}
+      />
       <Navbar />
-      <main style={{ width: "100%", position: "relative", zIndex: 1 }}>
+      <main id="main" tabIndex={-1} className="outline-none">
         <Hero />
+        <Systems />
+        <WhiteLabel />
+        <Studio />
+        <Stack />
         <Services />
-        <Work />
-        <About />
-        <AIAutomations />
-        <TechStack />
         <Contact />
       </main>
       <Footer />

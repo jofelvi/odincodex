@@ -1,364 +1,253 @@
 @import "tailwindcss";
 
+/* ───────────────────────────────────────────────────────────────
+   OdinCodex — "Casa de sistemas"
+   Ground and accents come from the logo's own materials:
+   night iron (verdigris-tinted dark), forged bronze, verdigris,
+   and the cyan glow of the runes (reserved for live signals).
+   ─────────────────────────────────────────────────────────────── */
+
 @theme {
-  /* Background tiers */
-  --color-bg-primary: #050505;
-  --color-bg-secondary: #0A0A0F;
-  --color-bg-elevated: #111118;
-  --color-bg-surface: #1A1A24;
+  /* Ground */
+  --color-night: #0e1a1c;
+  --color-night-deep: #0a1416;
+  --color-surface: #13252a;
+  --color-surface-raised: #1a3036;
+  --color-line: #24403f;
+  --color-line-strong: #33585a;
+  /* Control boundary (inputs, unselected radios): >=3:1 on night and surface */
+  --color-field: #5a807d;
 
-  /* Text hierarchy */
-  --color-text-primary: #F5F0E8;
-  --color-text-secondary: #A1A1AA;
-  --color-text-muted: #52525B;
+  /* Text */
+  --color-parchment: #e8e4da;
+  --color-mist: #a9b8b5;
+  --color-mist-dim: #8a9c99;
 
-  /* Brand accents — Norse bronze + cyan */
-  --color-accent-bronze: #C49A3C;
-  --color-accent-bronze-dark: #8B6914;
-  --color-accent-cyan: #00BFA5;
-  --color-accent-turquoise: #0D7377;
-  --color-accent-emerald: #2E8B57;
+  /* Accents */
+  --color-bronze: #c08a4e;
+  --color-bronze-bright: #d39d60;
+  --color-bronze-deep: #8f6232;
+  --color-verdigris: #5fa89a;
+  --color-rune: #2fd3c0;
 
-  /* Fonts — connect to next/font CSS variables */
-  --font-display: var(--font-clash-display), system-ui, sans-serif;
-  --font-body: var(--font-general-sans), system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), monospace;
-}
+  /* States */
+  --color-state-error: #e88a76;
+  --color-state-ok: #5fa89a;
 
-:root {
-  /* Gradient presets */
-  --gradient-hero: linear-gradient(135deg, #0D7377 0%, #00BFA5 40%, #C49A3C 100%);
-  --gradient-cta: linear-gradient(135deg, #C49A3C 0%, #00BFA5 100%);
-  --gradient-text: linear-gradient(90deg, #C49A3C, #00BFA5, #2E8B57);
-  --gradient-card: linear-gradient(180deg, rgba(0, 191, 165, 0.08) 0%, rgba(196, 154, 60, 0.04) 100%);
+  /* Type */
+  --font-sans: var(--font-familjen), "Segoe UI", system-ui, sans-serif;
 
-  /* Borders & effects */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(0, 191, 165, 0.3);
-  --glow-cyan: 0 0 60px rgba(0, 191, 165, 0.15);
-  --glow-bronze: 0 0 60px rgba(196, 154, 60, 0.15);
+  /* Motion */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 html {
-  scroll-behavior: initial;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
-html,
-body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text-primary);
-  font-family: var(--font-body);
+  background-color: var(--color-night);
+  color: var(--color-parchment);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  caret-color: var(--color-bronze);
+  overflow-x: clip;
 }
 
-/* Custom cursor — hide default on desktop */
-@media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
-}
-
-/* Selection color */
 ::selection {
-  background-color: rgba(0, 191, 165, 0.3);
-  color: var(--color-text-primary);
+  background-color: rgb(192 138 78 / 0.38);
+  color: var(--color-parchment);
 }
 
-/* Scrollbar styling */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-bronze-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Section headings receive programmatic focus on in-page navigation
+   (scrollToSection); the ring would only confuse pointer users. */
+h2[tabindex="-1"]:focus {
+  outline: none;
+}
+
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-primary);
+  background: var(--color-night-deep);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent-turquoise);
-  border-radius: 3px;
+  background: var(--color-line-strong);
+  border: 2px solid var(--color-night-deep);
+  border-radius: 6px;
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Section container utility */
-.section-container {
+/* Page container */
+.page {
   width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
 }
 
-@media (min-width: 375px) {
-  .section-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+/* Tabular figures for every number */
+.figures {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
-@media (min-width: 640px) {
-  .section-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+/* Press feedback (Emil: scale .97, 160ms, strong ease-out) */
+.press {
+  transition:
+    transform 160ms var(--ease-out-strong),
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+.press:active:not(:disabled) {
+  transform: scale(0.97);
 }
 
-@media (min-width: 768px) {
-  .section-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-container {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-}
-
-/* Marquee animations */
-@keyframes marquee-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes marquee-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.animate-marquee-left {
-  animation: marquee-left 30s linear infinite;
-}
-
-.animate-marquee-right {
-  animation: marquee-right 30s linear infinite;
-}
-
-/* ===== Scroll-driven animation keyframes ===== */
-
-/* Stagger from bottom with rotation (Services cards) */
-@keyframes slide-up-rotate {
+/* Hero: one orchestrated load sequence. The class ships in the server HTML,
+   so the first frame already starts at opacity 0 (no flash on hydration),
+   and the CSS animation still completes without JS.
+   The start opacity is 0.01, not 0: Chrome ignores opacity-0 paints for
+   Largest Contentful Paint, so a 0 start made the hero headline's LCP wait for
+   the animation and the scripts behind it (PageSpeed mobile 3.3 s vs 0.9 s).
+   1% is invisible on night iron. */
+@keyframes rise-in {
   from {
-    opacity: 0;
-    transform: translateY(60px) rotate(3deg);
+    opacity: 0.01;
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) rotate(0deg);
+    transform: none;
   }
 }
-
-.anim-slide-up-rotate {
-  opacity: 0;
-  transform: translateY(60px) rotate(3deg);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-slide-up-rotate.animate-in {
-  opacity: 1;
-  transform: translateY(0) rotate(0deg);
+.rise {
+  animation: rise-in 480ms var(--ease-out-strong) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
 }
 
-/* Alternate slide from left/right (Work cards) */
-.anim-slide-from-left {
-  opacity: 0;
-  transform: translateX(-80px) skewX(2deg);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-slide-from-left.animate-in {
-  opacity: 1;
-  transform: translateX(0) skewX(0deg);
-}
-
-.anim-slide-from-right {
-  opacity: 0;
-  transform: translateX(80px) skewX(-2deg);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-slide-from-right.animate-in {
-  opacity: 1;
-  transform: translateX(0) skewX(0deg);
-}
-
-/* Text line reveal (About section) */
-.anim-line-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  clip-path: inset(0 0 100% 0);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-line-reveal.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-  clip-path: inset(0 0 0 0);
-}
-
-/* Slide from right (About values) */
-.anim-value-slide {
-  opacity: 0;
-  transform: translateX(60px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-value-slide.animate-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Scale from 0 (Tech Stack marquee) */
-.anim-scale-in {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.anim-scale-in.animate-in {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Slide up staggered (Contact form fields) */
-.anim-field-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.anim-field-up.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fade in from bottom (Footer) */
-.anim-fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out,
-              transform 0.8s ease-out;
-}
-.anim-fade-up.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* AI Automations card glow pulse */
-@keyframes glow-pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 191, 165, 0.1);
+/* Panel swap feedback (system explorer, white-label demo) */
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
   }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 191, 165, 0.25);
-  }
-}
-
-.ai-card-glow:hover {
-  animation: glow-pulse 2s ease-in-out infinite;
-}
-
-/* AI icon float animation */
-@keyframes ai-float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.ai-icon-float {
-  animation: ai-float 3s ease-in-out infinite;
-}
-
-/* Parallax decorative blobs */
-.parallax-blob {
-  position: fixed;
-  pointer-events: none;
-  border-radius: 50%;
-  z-index: 0;
-  will-change: transform;
-  transition: transform 0.1s linear;
-}
-
-.parallax-blob--cyan {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 191, 165, 0.06) 0%, transparent 70%);
-  top: 20%;
-  left: -5%;
-  filter: blur(80px);
-}
-
-.parallax-blob--bronze {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(196, 154, 60, 0.05) 0%, transparent 70%);
-  top: 50%;
-  right: -5%;
-  filter: blur(100px);
-}
-
-.parallax-blob--turquoise {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(13, 115, 119, 0.07) 0%, transparent 70%);
-  top: 75%;
-  left: 10%;
-  filter: blur(90px);
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .parallax-blob {
-    display: none;
-  }
-
-  .anim-slide-up-rotate,
-  .anim-slide-from-left,
-  .anim-slide-from-right,
-  .anim-line-reveal,
-  .anim-value-slide,
-  .anim-scale-in,
-  .anim-field-up,
-  .anim-fade-up {
+  to {
     opacity: 1;
     transform: none;
-    clip-path: none;
+  }
+}
+.swap-in {
+  animation: swap-in 200ms var(--ease-out-strong) both;
+}
+
+/* Native select arrow replaced by a mist chevron */
+.select-chevron {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23a9b8b5' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+@keyframes fade-only {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press:active:not(:disabled) {
+    transform: none;
+  }
+  .rise,
+  .swap-in {
+    animation: fade-only 200ms ease both;
+    animation-delay: 0ms;
+  }
+}
+
+
+/* ── Scroll-linked motion (CSS scroll-driven animations) ──────────
+   Three restrained moments, all tied to the scroll position itself, so they
+   are interruptible and reversible by nature and run off the main thread:
+   1. .scroll-progress: reading-progress hairline under the header.
+   2. .hero-depth: the hero content lifts and recedes as it leaves the view.
+   3. .scroll-rise: dense data (studio figures, stack categories) settles in.
+   Browsers without scroll timelines, and reduced motion, get the static page. */
+/* Without scroll timelines (or with reduced motion) the hairline stays hidden. */
+.scroll-progress {
+  transform: scaleX(0);
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      animation: progress-grow linear both;
+      animation-timeline: scroll(root block);
+    }
+
+    /* The hero section clips its canvas (overflow: hidden makes it a scroll
+       container), so a view() timeline would bind to it and never move: drive
+       this from the page scroll across the first viewport instead. */
+    .hero-depth {
+      animation: hero-recede linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 85vh;
+    }
+
+    .scroll-rise {
+      animation: scroll-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 70%;
+    }
+  }
+}
+
+@keyframes progress-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-recede {
+  to {
+    opacity: 0.2;
+    transform: translateY(-56px) scale(0.985);
+  }
+}
+
+@keyframes scroll-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

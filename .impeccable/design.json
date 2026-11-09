@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T13:06:07.697Z",
+  "title": "Design System: OdinCodex",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "neutral",
+        "displayName": "Night Iron",
+        "canonical": "#0e1a1c",
+        "oklch": "oklch(20.7% 0.017 209.0)",
+        "tonalRamp": [
+          "#090c0c",
+          "#222728",
+          "#3e4749",
+          "#5b696b",
+          "#7e8c8e",
+          "#a6b0b2",
+          "#cdd2d3",
+          "#ebeff0"
+        ]
+      },
+      "night-deep": {
+        "role": "neutral",
+        "displayName": "Deep Night",
+        "canonical": "#0a1416",
+        "oklch": "oklch(18.2% 0.015 211.5)",
+        "tonalRamp": [
+          "#090c0c",
+          "#232728",
+          "#3f4748",
+          "#5d696b",
+          "#808c8e",
+          "#a7b0b1",
+          "#cdd2d3",
+          "#eceff0"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Iron Surface",
+        "canonical": "#13252a",
+        "oklch": "oklch(25.1% 0.026 217.4)",
+        "tonalRamp": [
+          "#080c0d",
+          "#21282a",
+          "#3a484c",
+          "#566a70",
+          "#7a8d93",
+          "#a3b1b5",
+          "#cbd2d5",
+          "#eaf0f1"
+        ]
+      },
+      "surface-raised": {
+        "role": "neutral",
+        "displayName": "Raised Iron",
+        "canonical": "#1a3036",
+        "oklch": "oklch(29.4% 0.030 217.1)",
+        "tonalRamp": [
+          "#080c0d",
+          "#20282a",
+          "#38484d",
+          "#536b71",
+          "#778e94",
+          "#a1b1b6",
+          "#cad3d5",
+          "#e9f0f2"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#24403f",
+        "oklch": "oklch(34.9% 0.034 192.8)",
+        "tonalRamp": [
+          "#070c0c",
+          "#1e2928",
+          "#364949",
+          "#4f6d6b",
+          "#74908e",
+          "#9fb2b1",
+          "#c9d4d3",
+          "#e8f0f0"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#33585a",
+        "oklch": "oklch(43.4% 0.043 200.1)",
+        "tonalRamp": [
+          "#060d0d",
+          "#1c292a",
+          "#314a4c",
+          "#486e70",
+          "#6d9193",
+          "#9bb3b5",
+          "#c6d4d5",
+          "#e7f1f1"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field Edge",
+        "canonical": "#5a807d",
+        "oklch": "oklch(57.1% 0.043 189.9)",
+        "tonalRamp": [
+          "#060d0c",
+          "#1c2928",
+          "#314b49",
+          "#496e6b",
+          "#6e918e",
+          "#9cb4b2",
+          "#c7d4d3",
+          "#e7f1f0"
+        ]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "#e8e4da",
+        "oklch": "oklch(91.9% 0.014 88.7)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#282623",
+          "#47453f",
+          "#69665d",
+          "#8c8980",
+          "#b0aea8",
+          "#d2d1cd",
+          "#efeeec"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "#a9b8b5",
+        "oklch": "oklch(77.0% 0.017 182.6)",
+        "tonalRamp": [
+          "#090c0b",
+          "#232827",
+          "#3e4745",
+          "#5c6967",
+          "#7f8c8a",
+          "#a7b0ae",
+          "#cdd2d1",
+          "#ebefef"
+        ]
+      },
+      "mist-dim": {
+        "role": "neutral",
+        "displayName": "Dim Mist",
+        "canonical": "#8a9c99",
+        "oklch": "oklch(67.8% 0.021 184.6)",
+        "tonalRamp": [
+          "#090c0b",
+          "#222827",
+          "#3c4846",
+          "#596a67",
+          "#7d8d8a",
+          "#a5b1af",
+          "#ccd3d1",
+          "#ebf0ef"
+        ]
+      },
+      "bronze": {
+        "role": "primary",
+        "displayName": "Forged Bronze",
+        "canonical": "#c08a4e",
+        "oklch": "oklch(67.4% 0.101 67.5)",
+        "tonalRamp": [
+          "#120902",
+          "#34220d",
+          "#5f3c13",
+          "#8c5918",
+          "#af7e47",
+          "#c9a783",
+          "#e1cdb9",
+          "#faecdd"
+        ]
+      },
+      "bronze-bright": {
+        "role": "primary",
+        "displayName": "Bright Bronze",
+        "canonical": "#d39d60",
+        "oklch": "oklch(73.4% 0.101 68.5)",
+        "tonalRamp": [
+          "#120902",
+          "#34220d",
+          "#5e3d12",
+          "#8b5a17",
+          "#ae7e47",
+          "#c9a783",
+          "#e1cdb9",
+          "#faecdd"
+        ]
+      },
+      "bronze-deep": {
+        "role": "primary",
+        "displayName": "Deep Bronze",
+        "canonical": "#8f6232",
+        "oklch": "oklch(53.4% 0.087 65.8)",
+        "tonalRamp": [
+          "#110903",
+          "#332312",
+          "#5c3e1e",
+          "#885b2b",
+          "#ab7f54",
+          "#c6a88a",
+          "#dfcebd",
+          "#f9ece0"
+        ]
+      },
+      "verdigris": {
+        "role": "secondary",
+        "displayName": "Verdigris",
+        "canonical": "#5fa89a",
+        "oklch": "oklch(68.0% 0.077 180.1)",
+        "tonalRamp": [
+          "#030e0b",
+          "#132c27",
+          "#1d4f46",
+          "#287468",
+          "#55978b",
+          "#8db8af",
+          "#bfd7d2",
+          "#e2f3ef"
+        ]
+      },
+      "rune": {
+        "role": "tertiary",
+        "displayName": "Rune Cyan",
+        "canonical": "#2fd3c0",
+        "oklch": "oklch(78.3% 0.131 183.0)",
+        "tonalRamp": [
+          "#000f0c",
+          "#002f29",
+          "#00544a",
+          "#007d6d",
+          "#00a090",
+          "#6fbfb3",
+          "#b1dbd4",
+          "#d8f6f0"
+        ]
+      },
+      "state-error": {
+        "role": "error",
+        "displayName": "Error Coral",
+        "canonical": "#e88a76",
+        "oklch": "oklch(72.8% 0.119 32.9)",
+        "tonalRamp": [
+          "#160604",
+          "#3c1c16",
+          "#6c3125",
+          "#9f4837",
+          "#c26f5d",
+          "#d99d90",
+          "#ebc8c0",
+          "#ffe8e2"
+        ]
+      },
+      "state-ok": {
+        "role": "success",
+        "displayName": "Verdigris (state ok)",
+        "canonical": "#5fa89a",
+        "oklch": "oklch(68.0% 0.077 180.1)",
+        "tonalRamp": [
+          "#030e0b",
+          "#132c27",
+          "#1d4f46",
+          "#287468",
+          "#55978b",
+          "#8db8af",
+          "#bfd7d2",
+          "#e2f3ef"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Bronze Selection",
+        "canonical": "rgb(192 138 78 / 0.38)",
+        "purpose": "::selection background; bronze at 38% under parchment text."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; max 16ch, balanced wrap."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles (Systems, White label, Stack); default for new sections."
+      },
+      "headline-close": {
+        "displayName": "Headline, close",
+        "purpose": "Shipped section-title variant in Services and Contact."
+      },
+      "headline-studio": {
+        "displayName": "Headline, studio",
+        "purpose": "Shipped section-title variant in Studio."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Studio facts; tabular lining figures."
+      },
+      "title-lg": {
+        "displayName": "Title large",
+        "purpose": "System name in the explorer panel."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Studio sub-heads."
+      },
+      "title-confirm": {
+        "displayName": "Title, confirm",
+        "purpose": "Contact success title."
+      },
+      "title-sm": {
+        "displayName": "Title small",
+        "purpose": "Services capability names at md and up (1.25rem below md)."
+      },
+      "title-xs": {
+        "displayName": "Title extra small",
+        "purpose": "Footer brand name, contact email line; the hero lede at md uses this size at 400."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Opening paragraph under section titles (Services, Contact)."
+      },
+      "body-lg": {
+        "displayName": "Body large",
+        "purpose": "System summaries, section intros, hero lede below md."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base body size on body; descriptions, fields, notices."
+      },
+      "body-read": {
+        "displayName": "Body, reading",
+        "purpose": "Long-form reading text in Stack."
+      },
+      "list": {
+        "displayName": "List",
+        "purpose": "Custom-software deliverable lists (one-off step near UI)."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Nav links, buttons, form labels, highlights, module points."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Live labels, tags, footer column titles, suite heading."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Inside the white-label demo only."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Hero suite sector labels and demo fine print only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay-drop",
+        "value": "0 16px 32px rgb(0 0 0 / 0.35)",
+        "purpose": "Mobile menu panel floating over content."
+      },
+      {
+        "name": "showcase-lift",
+        "value": "0 24px 60px -28px rgb(0 0 0 / 0.7)",
+        "purpose": "White-label demo device frame."
+      },
+      {
+        "name": "selected-ring",
+        "value": "inset 0 0 0 1px var(--color-bronze)",
+        "purpose": "Doubles the bronze border of a selected brand choice."
+      },
+      {
+        "name": "header-glass",
+        "value": "background rgb(14 26 28 / 0.9); backdrop-filter blur(12px)",
+        "purpose": "Header once scrolled or with the menu open."
+      },
+      {
+        "name": "suite-glass",
+        "value": "background rgb(14 26 28 / 0.7); backdrop-filter blur(4px)",
+        "purpose": "Hero suite list over the rune field."
+      },
+      {
+        "name": "hero-veil",
+        "value": "radial-gradient(ellipse 70% 80% at 20% 50%, rgb(14 26 28 / 0.85), transparent 70%)",
+        "purpose": "Legibility veil behind the hero text column; the only gradient."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline 2px solid var(--color-bronze-bright); outline-offset 3px; border-radius 4px",
+        "purpose": "Global :focus-visible treatment."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-strong",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "All transform motion: press, rise, swap, menu, chevron."
+      },
+      {
+        "name": "ease-in-out-strong",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Defined in @theme; not currently used."
+      },
+      {
+        "name": "press",
+        "value": "transform scale(0.97), 160ms ease-out-strong",
+        "purpose": "Active state of buttons, the nav CTA and brand choices."
+      },
+      {
+        "name": "rise",
+        "value": "480ms ease-out-strong, from opacity 0 and translateY(10px), 60ms stagger per step",
+        "purpose": "Hero load sequence only."
+      },
+      {
+        "name": "swap-in",
+        "value": "200ms ease-out-strong, from opacity 0 and translateY(4px)",
+        "purpose": "Pointer-initiated panel swaps only (systems explorer, mobile disclosures, form result); never keyboard or deep link."
+      },
+      {
+        "name": "menu-open",
+        "value": "200ms ease-out-strong, opacity and translateY(-8px to 0)",
+        "purpose": "Mobile menu panel and scrim opening."
+      },
+      {
+        "name": "menu-close",
+        "value": "150ms ease-out-strong",
+        "purpose": "Mobile menu closing; Escape closes instantly."
+      },
+      {
+        "name": "color",
+        "value": "150ms ease (200ms for the header and the demo recolour)",
+        "purpose": "Colour, border and background transitions."
+      },
+      {
+        "name": "chevron",
+        "value": "rotate 180deg, 200ms ease-out-strong",
+        "purpose": "Disclosure chevron and hamburger strokes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "fade-only 200ms ease; no press scale; scroll-behavior auto",
+        "purpose": "prefers-reduced-motion: opacity only."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Primary switch: desktop nav, systems tablist, two-column grids."
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ],
+    "other": {
+      "scrollbar": "10px wide; night-deep track; line-strong thumb with 2px night-deep border, 6px radius",
+      "selection": "rgb(192 138 78 / 0.38) background, parchment text",
+      "caret": "bronze",
+      "icons": "NorseIcon: 32x32 viewBox, stroke 1.5, round caps and joins, currentColor; utility glyphs 16 grid at 1.6 stroke",
+      "fixtures": "Hero rune particle field (HeroCanvas/ParticleField) and the PNG logo mark are brand fixtures, exempt from tokens, never restyled."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Forged bronze action; one per view region (request a demo).",
+      "html": "<button class=\"ds-btn-primary\">Solicitar demo</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 8px; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: transform 160ms var(--ease-out-strong, cubic-bezier(0.23, 1, 0.32, 1)), background-color 150ms ease, color 150ms ease, border-color 150ms ease; background: var(--color-bronze, #c08a4e); color: var(--color-night-deep, #0a1416); border: none; } .ds-btn-primary:hover { background: var(--color-bronze-bright, #d39d60); } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined companion action (explore systems, request a demo of one system).",
+      "html": "<button class=\"ds-btn-secondary\">Explorar los sistemas</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 8px; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: transform 160ms var(--ease-out-strong, cubic-bezier(0.23, 1, 0.32, 1)), background-color 150ms ease, color 150ms ease, border-color 150ms ease; background: transparent; color: var(--color-parchment, #e8e4da); border: 1px solid var(--color-line-strong, #33585a); } .ds-btn-secondary:hover { border-color: var(--color-mist, #a9b8b5); background: var(--color-surface, #13252a); } .ds-btn-secondary:active { transform: scale(0.97); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Text-weight action; parchment turning bright bronze on hover.",
+      "html": "<button class=\"ds-btn-quiet\">Ver detalles</button>",
+      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: 8px; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: transform 160ms var(--ease-out-strong, cubic-bezier(0.23, 1, 0.32, 1)), background-color 150ms ease, color 150ms ease, border-color 150ms ease; background: transparent; border: none; color: var(--color-parchment, #e8e4da); } .ds-btn-quiet:hover { color: var(--color-bronze-bright, #d39d60); } .ds-btn-quiet:active { transform: scale(0.97); } .ds-btn-quiet:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact form field: surface fill, field-edge border, bronze on focus, coral on error.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nombre</span><input class=\"ds-input\" placeholder=\"Tu nombre\" /></label>",
+      "css": ".ds-field { display: block; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); } .ds-field-label { display: block; margin-bottom: 8px; font-size: 0.9375rem; font-weight: 500; color: var(--color-parchment, #e8e4da); } .ds-input { display: block; width: 100%; min-height: 48px; padding: 10px 16px; border-radius: 8px; border: 1px solid var(--color-field, #5a807d); background: var(--color-surface, #13252a); color: var(--color-parchment, #e8e4da); font: inherit; font-size: 1.0625rem; line-height: 1.5; transition: border-color 150ms ease; } .ds-input::placeholder { color: var(--color-mist-dim, #8a9c99); } .ds-input:hover { border-color: var(--color-mist, #a9b8b5); } .ds-input:focus { border-color: var(--color-bronze-bright, #d39d60); } .ds-input:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; } .ds-input[aria-invalid=\"true\"] { border-color: var(--color-state-error, #e88a76); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Scrolled header: logo, mist links with a bronze current-section underline, ES/EN toggle, bronze CTA.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav-brand\">OdinCodex</span><nav class=\"ds-nav-links\"><a href=\"#\" class=\"ds-nav-link\" aria-current=\"location\">Sistemas</a><a href=\"#\" class=\"ds-nav-link\">Marca blanca</a><a href=\"#\" class=\"ds-nav-link\">Estudio</a></nav><div class=\"ds-lang\"><button class=\"ds-lang-btn\" aria-pressed=\"true\">ES</button><button class=\"ds-lang-btn\" aria-pressed=\"false\">EN</button></div><a href=\"#\" class=\"ds-nav-cta\">Solicitar demo</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 28px; height: 64px; padding: 0 24px; background: rgb(14 26 28 / 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-line, #24403f); font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); } .ds-nav-brand { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; color: var(--color-parchment, #e8e4da); margin-right: auto; } .ds-nav-links { display: flex; gap: 28px; } .ds-nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; font-size: 0.9375rem; color: var(--color-mist, #a9b8b5); text-decoration: none; transition: color 150ms ease; } .ds-nav-link:hover, .ds-nav-link[aria-current] { color: var(--color-parchment, #e8e4da); } .ds-nav-link::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; border-radius: 9999px; background: var(--color-bronze, #c08a4e); opacity: 0; transition: opacity 150ms ease; } .ds-nav-link[aria-current]::after { opacity: 1; } .ds-nav-link:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; } .ds-lang { display: flex; padding: 2px; border: 1px solid var(--color-line, #24403f); border-radius: 8px; } .ds-lang-btn { min-width: 44px; min-height: 44px; border: none; border-radius: 6px; background: transparent; color: var(--color-mist, #a9b8b5); font: 600 0.875rem var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); cursor: pointer; transition: color 150ms ease; } .ds-lang-btn:hover { color: var(--color-parchment, #e8e4da); } .ds-lang-btn[aria-pressed=\"true\"] { background: var(--color-surface-raised, #1a3036); color: var(--color-parchment, #e8e4da); } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 8px; background: var(--color-bronze, #c08a4e); color: var(--color-night-deep, #0a1416); font-size: 0.9375rem; font-weight: 600; text-decoration: none; transition: transform 160ms var(--ease-out-strong, cubic-bezier(0.23, 1, 0.32, 1)), background-color 150ms ease, color 150ms ease, border-color 150ms ease; } .ds-nav-cta:hover { background: var(--color-bronze-bright, #d39d60); } .ds-nav-cta:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Platform and integration tags in a system panel.",
+      "html": "<ul class=\"ds-tags\"><li class=\"ds-tag\">Web</li><li class=\"ds-tag\">Android</li><li class=\"ds-tag\">Impresoras térmicas</li></ul>",
+      "css": ".ds-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); } .ds-tag { padding: 4px 10px; border-radius: 6px; border: 1px solid var(--color-line, #24403f); background: rgb(14 26 28 / 0.4); font-size: 0.875rem; line-height: 1.375; color: var(--color-mist, #a9b8b5); }"
+    },
+    {
+      "name": "System Tab",
+      "kind": "custom",
+      "refersTo": "system-tab-selected",
+      "description": "Systems explorer tablist row: Norse mark in a well, name and sector; selected gets raised iron and a bronze edge bar.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\"><span class=\"ds-tab-bar\"></span><span class=\"ds-tab-well\"><svg viewBox=\"0 0 32 32\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.5 19.5 Q10 16.5 16 7.5 L17.9 4.6 C18.5 3.7 19.8 3.4 20.7 4.1 L19.6 5.1\"/><path d=\"M29.5 19.5 Q22 16.5 16 7.5 L14.1 4.6 C13.5 3.7 12.2 3.4 11.3 4.1 L12.4 5.1\"/><path d=\"M7 19.6 Q12.6 16.4 16 11.6 Q19.4 16.4 25 19.6\"/><path d=\"M5.5 18.8 V27 M26.5 18.8 V27 M3 27 H29\"/><path d=\"M13.5 27 V23 a2.5 2.5 0 0 1 5 0 V27\"/></svg></span><span><span class=\"ds-tab-name\">Valhalla ERP</span><span class=\"ds-tab-sector\">Restaurantes, bares y clubes</span></span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\"><span class=\"ds-tab-bar\"></span><span class=\"ds-tab-well\"><svg viewBox=\"0 0 32 32\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"12.25\"/><path d=\"M10 5.6 V26.4 M22 5.6 V26.4\"/><circle cx=\"16\" cy=\"16\" r=\"3.4\"/><circle cx=\"16\" cy=\"16\" r=\"1.15\" fill=\"currentColor\" stroke=\"none\"/></svg></span><span><span class=\"ds-tab-name\">Asgard</span><span class=\"ds-tab-sector\">Recursos humanos</span></span></button></div>",
+      "css": ".ds-tabs { display: flex; flex-direction: column; gap: 4px; width: 18.5rem; font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); } .ds-tab { position: relative; display: flex; align-items: center; gap: 16px; min-height: 64px; width: 100%; padding: 12px 16px; border: none; border-radius: 12px; background: transparent; text-align: left; cursor: pointer; transition: background-color 150ms ease; } .ds-tab:hover { background: var(--color-surface, #13252a); } .ds-tab[aria-selected=\"true\"] { background: var(--color-surface-raised, #1a3036); } .ds-tab-bar { position: absolute; top: 12px; bottom: 12px; left: 0; width: 2px; border-radius: 9999px; background: var(--color-bronze, #c08a4e); opacity: 0; transition: opacity 150ms ease; } .ds-tab[aria-selected=\"true\"] .ds-tab-bar { opacity: 1; } .ds-tab-well { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; border-radius: 8px; border: 1px solid var(--color-line, #24403f); color: var(--color-mist, #a9b8b5); transition: color 150ms ease; } .ds-tab:hover .ds-tab-well { color: var(--color-parchment, #e8e4da); } .ds-tab[aria-selected=\"true\"] .ds-tab-well { border-color: var(--color-line-strong, #33585a); background: var(--color-night, #0e1a1c); color: var(--color-bronze-bright, #d39d60); } .ds-tab-name { display: block; font-weight: 600; line-height: 1.375; color: var(--color-parchment, #e8e4da); } .ds-tab-sector { display: block; font-size: 0.875rem; line-height: 1.375; color: var(--color-mist, #a9b8b5); } .ds-tab:focus-visible { outline: 2px solid var(--color-bronze-bright, #d39d60); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "System Panel",
+      "kind": "card",
+      "refersTo": "system-panel",
+      "description": "Surface panel with a rune-dot live proof line and verdigris-checked highlights in hairline rows.",
+      "html": "<article class=\"ds-panel\"><h3 class=\"ds-panel-title\">Valhalla ERP</h3><p class=\"ds-panel-summary\">Caja en dólares y bolívares, inventario que se descuenta por receta.</p><p class=\"ds-proof\"><span class=\"ds-rune\"></span>En producción en Arena Restobar</p><ul class=\"ds-highlights\"><li><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 8.5l3 3 7-7\"/></svg>Comandas por estación</li><li><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 8.5l3 3 7-7\"/></svg>Impresoras térmicas</li></ul></article>",
+      "css": ".ds-panel { padding: 32px; border-radius: 16px; border: 1px solid var(--color-line, #24403f); background: var(--color-surface, #13252a); font-family: var(--font-sans, 'Familjen Grotesk', 'Segoe UI', system-ui, sans-serif); color: var(--color-parchment, #e8e4da); } .ds-panel-title { margin: 0; font-size: 1.875rem; line-height: 1.25; font-weight: 600; letter-spacing: -0.02em; } .ds-panel-summary { margin: 16px 0 0; max-width: 62ch; font-size: 1.125rem; line-height: 1.625; } .ds-proof { display: flex; align-items: center; gap: 10px; margin: 16px 0 0; font-size: 0.9375rem; font-weight: 500; } .ds-rune { width: 6px; height: 6px; border-radius: 9999px; background: var(--color-rune, #2fd3c0); flex-shrink: 0; } .ds-highlights { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--color-line, #24403f); border-bottom: 1px solid var(--color-line, #24403f); } .ds-highlights li { display: flex; gap: 10px; padding: 16px 0; font-size: 0.9375rem; line-height: 1.375; } .ds-highlights li + li { border-top: 1px solid var(--color-line, #24403f); } .ds-highlights svg { flex-shrink: 0; margin-top: 0.2em; color: var(--color-verdigris, #5fa89a); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Casa de sistemas",
+    "overview": "A house that builds and owns its own management systems, presenting them the way a serious product company would: dark, quiet and specific. The ground is night iron, a verdigris-tinted near-black taken from the logo itself; the one warm material is forged bronze, which marks every action. Verdigris confirms, and the cyan of the logo's runes appears only where something is actually live. The page is product-led: every system (Valhalla ERP, Bifrost ERP, Heimdall, Thor, Asgard, Forseti; Sleipnir and Midgard in development) is shown by its own hand-drawn Norse mark, its sector, and its real modules, not by mood imagery.\n\nDensity is calm B2B: generous section rhythm (96 to 128px), wide reading measures capped by `ch`, hairline dividers instead of boxes wherever a list will do, and one family of type doing all the work through weight and tracking. Motion is short and purposeful: one orchestrated rise on the hero, a 200ms settle when a person swaps a panel by pointer, nothing else moving for its own sake.\n\nTwo fixtures are part of the brand and are never restyled: the 3D rune particle field behind the hero (its colours are its own, not the token palette) and the PNG logo mark (`public/images/logo-mark.png`). The previous \"ledger of works\" world (bookcloth, accounting paper, serif display) was rejected by the owner and nothing of it carries over.",
+    "keyCharacteristics": [
+      "Night iron ground with tonal surfaces one step lighter; depth by tone and hairline, not shadow.",
+      "Forged bronze is the single action colour; verdigris confirms; rune cyan means live.",
+      "One sans family (Familjen Grotesk), semibold headings with negative tracking, sentence case everywhere.",
+      "Hand-drawn Norse SVG marks on a 32 grid at 1.5 stroke, one per system.",
+      "Restrained motion on a strong ease-out curve; reduced motion falls back to opacity only."
+    ],
+    "rules": [
+      {
+        "name": "The Rune Is Alive Rule",
+        "body": "Rune cyan appears only as a small dot that means \"in production now\". If nothing on the screen is live, rune is absent.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Warm Metal Rule",
+        "body": "Bronze is the only warm colour in the system and it always means \"act here\" or \"you are here\". Do not introduce a second accent hue for actions.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tinted Neutral Rule",
+        "body": "No pure black or pure grey: every neutral carries the verdigris tint of the iron (#0e1a1c family). Shadows are the one place `rgb(0 0 0 / x)` is allowed.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every heading, label and button is sentence case. No uppercase transforms, no letter-spaced small caps, no eyebrow or kicker line above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Familjen Grotesk is the only face. Emphasis is weight or colour, never a second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Number Rule",
+        "body": "Every number that can change or be compared (facts, prices, counters, the copyright year) uses tabular lining figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tone Before Shadow Rule",
+        "body": "A card at rest is a tone step and a hairline. If it does not float over other content, it gets no shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use bronze (#c08a4e) for the single primary action in a region and for \"you are here\" markers; hover to bright bronze (#d39d60).",
+      "Do reserve rune cyan (#2fd3c0) for small live-status dots only.",
+      "Do use verdigris (#5fa89a) for confirmation marks and deliverable rules.",
+      "Do draw new system or feature icons in the NorseIcon family: 32 grid, 1.5 stroke, round caps and joins, currentColor.",
+      "Do ease motion with cubic-bezier(0.23, 1, 0.32, 1): press 0.97 over 160ms, hero rise 480ms from 10px with a 60ms stagger, panel swap 200ms from 4px, menu 200ms open and 150ms close; colour changes 150 to 200ms on plain ease.",
+      "Do animate only on pointer-initiated panel swaps; keyboard and deep-link changes switch in place.",
+      "Do fall back to opacity only (200ms fade) under prefers-reduced-motion, with no scale on press and no smooth scrolling.",
+      "Do use the 2px bright-bronze focus outline at 3px offset with a 4px radius on every focusable element.",
+      "Do keep the rune particle field and the PNG logo mark exactly as they are.",
+      "Do name only real, verifiable work: Arena Restobar is the only client that may be named."
+    ],
+    "donts": [
+      "Don't put an all-caps eyebrow, kicker or letter-spaced label above a heading.",
+      "Don't use gradient text, or gradients as decoration; the hero legibility veil is the only gradient.",
+      "Don't use emoji, Unicode symbols or icon-font glyphs as icons; every icon is drawn SVG.",
+      "Don't build meta strings joined with middle dots; separate with commas or layout.",
+      "Don't append \"→\" or an arrow icon to CTA labels.",
+      "Don't invent clients, logos, testimonials or metrics, and never name banks.",
+      "Don't use the valknut, sunwheel, Othala or Wolfsangel in any mark.",
+      "Don't restyle, recolour or replace the hero rune field, or redraw the logo as vector.",
+      "Don't add shadows to cards at rest or introduce a second accent hue.",
+      "Don't bring back the ledger world: no bookcloth, accounting paper or serif display face."
+    ]
+  }
+}
