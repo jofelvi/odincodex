@@ -43,6 +43,14 @@ export interface SystemEntry {
   copy: Record<Locale, SystemCopy>;
 }
 
+/** One question and its answer on a system page (also emitted as FAQPage JSON-LD). */
+export interface FaqItem {
+  /** Phrased the way people search for it. */
+  q: string;
+  /** Plain-text answer; every claim must trace to the system's data. */
+  a: string;
+}
+
 export interface StackGroup {
   category: Record<Locale, string>;
   items: string[];

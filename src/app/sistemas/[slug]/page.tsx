@@ -1,8 +1,9 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { systems } from "@/data/systems";
+import { faqs } from "@/data/faq";
 import { SITE_CONFIG, SECTION_IDS } from "@/lib/constants";
-import { breadcrumbLd, softwareApplicationLd } from "@/lib/seo";
+import { breadcrumbLd, faqPageLd, softwareApplicationLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 import ClientProviders from "@/components/layout/ClientProviders";
 import Navbar from "@/components/layout/Navbar";
@@ -119,6 +120,8 @@ export default async function SystemRoute({ params }: { params: Promise<Params> 
   if (!system) notFound();
 
   const url = `${SITE_CONFIG.url}/sistemas/${system.id}`;
+  // The page renders in Spanish first, so the FAQ markup uses the Spanish answers.
+  const faq = faqs[system.id]?.es ?? [];
 
   return (
     <ClientProviders>
@@ -130,6 +133,7 @@ export default async function SystemRoute({ params }: { params: Promise<Params> 
             { name: "Sistemas", url: `${SITE_CONFIG.url}/#${SECTION_IDS.systems}` },
             { name: system.name, url },
           ]),
+          ...(faq.length > 0 ? [faqPageLd(url, faq)] : []),
         ]}
       />
       <Navbar />
