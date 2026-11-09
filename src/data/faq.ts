@@ -271,7 +271,7 @@ export const faqs: Partial<Record<SystemId, Record<Locale, FaqItem[]>>> = {
     es: [
       {
         q: "¿Cómo maneja Forseti el número de control que pide el SENIAT?",
-        a: "Cada factura lleva número de control correlativo, según la Providencia SNAT/2024/000121, sin saltos ni duplicados aunque facturen varias cajas a la vez. Una factura emitida no se edita ni se borra, y se reimprime idéntica sin volver a emitirla.",
+        a: "Cada factura lleva número de control correlativo, como exige la normativa de facturación del SENIAT, sin saltos ni duplicados aunque facturen varias cajas a la vez. Una factura emitida no se edita ni se borra, y se reimprime idéntica sin volver a emitirla.",
       },
       {
         q: "¿Cómo se corrige una factura ya emitida?",
@@ -297,7 +297,7 @@ export const faqs: Partial<Record<SystemId, Record<Locale, FaqItem[]>>> = {
     en: [
       {
         q: "How does Forseti handle the control number SENIAT requires?",
-        a: "Each invoice carries a sequential control number, per Providencia SNAT/2024/000121, with no gaps or duplicates even when several registers invoice at once. An issued invoice cannot be edited or deleted, and it reprints identically without being issued again.",
+        a: "Each invoice carries a sequential control number, as SENIAT invoicing rules require, with no gaps or duplicates even when several registers invoice at once. An issued invoice cannot be edited or deleted, and it reprints identically without being issued again.",
       },
       {
         q: "How is an issued invoice corrected?",

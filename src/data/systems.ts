@@ -1142,7 +1142,7 @@ export const systems: SystemEntry[] = [
           {
             title: "Documentos fiscales",
             points: [
-              "Facturas con número de control correlativo, según la Providencia SNAT/2024/000121",
+              "Facturas con número de control correlativo, según la normativa de facturación del SENIAT",
               "Sin saltos ni duplicados, aunque facturen varias cajas a la vez",
               "Una factura emitida no se edita ni se borra",
               "Datos del emisor congelados para reimprimirla idéntica, sin volver a emitirla",
@@ -1218,7 +1218,7 @@ export const systems: SystemEntry[] = [
           {
             title: "Tax documents",
             points: [
-              "Invoices with sequential control numbers, per SENIAT Providencia SNAT/2024/000121",
+              "Invoices with sequential control numbers, per SENIAT invoicing rules",
               "No gaps or duplicates, even with several registers invoicing at once",
               "An issued invoice cannot be edited or deleted",
               "Issuer details frozen for identical reprints, without reissuing",
