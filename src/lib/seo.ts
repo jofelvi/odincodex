@@ -1,5 +1,5 @@
 import type { Locale } from "@/i18n";
-import type { SystemEntry } from "@/types";
+import type { FaqItem, SystemEntry } from "@/types";
 import { systems } from "@/data/systems";
 import { SECTION_IDS, SITE_CONFIG } from "@/lib/constants";
 
@@ -159,6 +159,25 @@ export function breadcrumbLd(items: { name: string; url: string }[]): JsonLdNode
       position: index + 1,
       name: item.name,
       item: item.url,
+    })),
+  };
+}
+
+/**
+ * Questions and answers shown on a page, as a FAQPage. The text must match what
+ * is visible on that page. Google limits FAQ rich results to a few site types,
+ * so this mainly helps search engines and AI answers read the Q&A pairs.
+ */
+export function faqPageLd(url: string, items: FaqItem[]): JsonLdNode {
+  return {
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    url,
+    inLanguage: "es",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   };
 }

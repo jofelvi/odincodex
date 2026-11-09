@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { systems } from "@/data/systems";
+import { faqs } from "@/data/faq";
 import { SECTION_IDS } from "@/lib/constants";
 import { useI18n } from "@/i18n";
 import { useCopy } from "@/i18n/useCopy";
 import NorseIcon from "@/components/ui/NorseIcon";
-import type { SystemEntry, SystemId } from "@/types";
+import type { FaqItem, SystemEntry, SystemId } from "@/types";
 import { SYSTEM_PAGE_COPY } from "./copy";
 
 const LIVE: SystemEntry[] = systems.filter((s) => s.stage === "live");
@@ -28,6 +29,7 @@ export default function SystemPage({ id }: { id: SystemId }) {
   if (!entry) return null;
   const copy = entry.copy[locale];
   const others = LIVE.filter((s) => s.id !== id);
+  const faq = faqs[id]?.[locale] ?? [];
 
   return (
     <>
@@ -139,6 +141,10 @@ export default function SystemPage({ id }: { id: SystemId }) {
             <TagList id="system-integrations" title={c.integrations} items={copy.integrations} />
           </div>
 
+          {faq.length > 0 && (
+            <Faq title={c.faqTitle} intro={c.faqIntro(entry.name)} items={faq} />
+          )}
+
           <div className="mt-14 flex flex-col gap-5 rounded-2xl border border-line bg-surface p-7 sm:flex-row sm:items-center sm:justify-between md:p-9">
             <p className="max-w-[40ch] text-lg leading-snug font-semibold text-parchment">{c.demoNote}</p>
             <a
@@ -183,6 +189,57 @@ export default function SystemPage({ id }: { id: SystemId }) {
         </section>
       )}
     </>
+  );
+}
+
+/**
+ * Native <details> disclosures: keyboard, screen readers and find-in-page work
+ * without script, and the answers stay in the server HTML for crawlers.
+ */
+function Faq({ title, intro, items }: { title: string; intro: string; items: FaqItem[] }) {
+  return (
+    <section
+      aria-labelledby="system-faq"
+      className="mt-16 grid gap-6 border-t border-line pt-10 lg:mt-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-12"
+    >
+      <div>
+        <h2
+          id="system-faq"
+          className="text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] font-semibold tracking-[-0.02em] text-parchment"
+        >
+          {title}
+        </h2>
+        <p className="mt-3 max-w-[32ch] text-mist">{intro}</p>
+      </div>
+      <div className="border-t border-line lg:border-t-0">
+        {items.map((item) => (
+          <details key={item.q} className="group border-b border-line lg:first:border-t">
+            <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-6 py-4 text-left text-lg leading-snug font-semibold text-parchment transition-colors duration-150 ease-[ease] hover:text-bronze-bright [&::-webkit-details-marker]:hidden">
+              <span>{item.q}</span>
+              <Chevron />
+            </summary>
+            <p className="max-w-[64ch] pb-6 leading-relaxed text-mist">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Chevron() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-4 shrink-0 text-mist transition-transform duration-200 ease-[var(--ease-out-strong)] group-open:rotate-180 motion-reduce:transition-none"
+    >
+      <path d="M4 6l4 4 4-4" />
+    </svg>
   );
 }
 
