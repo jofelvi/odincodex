@@ -197,3 +197,58 @@ export function serviceLd(): JsonLdNode {
     inLanguage: "es",
   };
 }
+
+/** Public URL of a guide; the index lives at /guias. */
+export function guideUrl(slug?: string): string {
+  return slug ? `${SITE_URL}/guias/${slug}` : `${SITE_URL}/guias`;
+}
+
+/** A guide as an Article written and published by the organization. */
+export function articleLd(guide: {
+  slug: string;
+  title: string;
+  description: string;
+  published: string;
+  sections: { heading: string }[];
+}): JsonLdNode {
+  const url = guideUrl(guide.slug);
+  return {
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: guide.title,
+    description: guide.description,
+    url,
+    mainEntityOfPage: url,
+    datePublished: guide.published,
+    dateModified: guide.published,
+    inLanguage: "es",
+    image: `${SITE_URL}/opengraph-image`,
+    // Named inline: the full organization node lives on the home page, not on this one.
+    author: { "@type": "Organization", "@id": ORGANIZATION_ID, name: SITE_CONFIG.name, url: `${SITE_URL}/` },
+    publisher: {
+      "@type": "Organization",
+      "@id": ORGANIZATION_ID,
+      name: SITE_CONFIG.name,
+      url: `${SITE_URL}/`,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/images/logo-mark.png` },
+    },
+    isPartOf: { "@id": WEBSITE_ID },
+    articleSection: guide.sections.map((section) => section.heading),
+  };
+}
+
+/** The guides index: an ItemList pointing to each guide. */
+export function guidesItemListLd(items: { slug: string; title: string }[]): JsonLdNode {
+  return {
+    "@type": "ItemList",
+    "@id": `${guideUrl()}#guias`,
+    name: "Guías de OdinCodex",
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.title,
+      url: guideUrl(item.slug),
+    })),
+  };
+}

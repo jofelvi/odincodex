@@ -12,6 +12,7 @@ import { useCopy, type Bilingual } from "@/i18n/useCopy";
 
 const COPY: Bilingual<{
   links: { id: string; label: string }[];
+  guides: string;
   cta: string;
   home: string;
   primary: string;
@@ -28,6 +29,7 @@ const COPY: Bilingual<{
       { id: SECTION_IDS.stack, label: "Stack" },
       { id: SECTION_IDS.services, label: "A medida" },
     ],
+    guides: "Guías",
     cta: "Solicitar demo",
     home: "OdinCodex, inicio",
     primary: "Principal",
@@ -44,6 +46,7 @@ const COPY: Bilingual<{
       { id: SECTION_IDS.stack, label: "Stack" },
       { id: SECTION_IDS.services, label: "Custom" },
     ],
+    guides: "Guides",
     cta: "Request a demo",
     home: "OdinCodex, home",
     primary: "Primary",
@@ -131,6 +134,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const onHome = pathname === "/";
   const onSystemPage = pathname.startsWith("/sistemas/");
+  const onGuides = pathname === "/guias" || pathname.startsWith("/guias/");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -230,7 +234,7 @@ export default function Navbar() {
             <span className="text-[1.0625rem] font-semibold tracking-[-0.01em] text-parchment">OdinCodex</span>
           </Link>
 
-          <nav aria-label={c.primary} className="hidden items-center gap-7 lg:flex">
+          <nav aria-label={c.primary} className="hidden items-center gap-6 lg:flex xl:gap-7">
             {c.links.map((link) => (
               <a
                 key={link.id}
@@ -242,6 +246,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <Link
+              href="/guias"
+              aria-current={onGuides ? "page" : undefined}
+              className={`${CURRENT_MARK} inline-flex min-h-11 items-center text-[0.9375rem] text-mist transition-colors duration-150 ease-[ease] after:bottom-2 hover:text-parchment aria-[current=page]:text-parchment aria-[current=page]:after:opacity-100`}
+            >
+              {c.guides}
+            </Link>
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
@@ -302,6 +313,16 @@ export default function Navbar() {
                 </span>
               </a>
             ))}
+            <Link
+              href="/guias"
+              onClick={() => setIsMenuOpen(false)}
+              aria-current={onGuides ? "page" : undefined}
+              className="group flex min-h-12 items-center border-b border-line text-lg text-parchment"
+            >
+              <span className={`${CURRENT_MARK} after:-bottom-1 group-aria-[current=page]:after:opacity-100`}>
+                {c.guides}
+              </span>
+            </Link>
             <div className="mt-4 flex items-center justify-between gap-4 pb-2">
               <LanguageSwitch label={c.language} />
               <a

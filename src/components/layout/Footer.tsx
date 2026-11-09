@@ -14,6 +14,7 @@ const COPY: Bilingual<{
   systemsTitle: string;
   studioTitle: string;
   links: { id: string; label: string }[];
+  guides: string;
   rights: string;
 }> = {
   es: {
@@ -27,6 +28,7 @@ const COPY: Bilingual<{
       { id: SECTION_IDS.services, label: "Software a medida" },
       { id: SECTION_IDS.contact, label: "Solicitar demo" },
     ],
+    guides: "Guías",
     rights: "Todos los derechos reservados.",
   },
   en: {
@@ -40,6 +42,7 @@ const COPY: Bilingual<{
       { id: SECTION_IDS.services, label: "Custom software" },
       { id: SECTION_IDS.contact, label: "Request a demo" },
     ],
+    guides: "Guides (Spanish)",
     rights: "All rights reserved.",
   },
 };
@@ -111,6 +114,11 @@ export default function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link href="/guias" className={link}>
+                {c.guides}
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
